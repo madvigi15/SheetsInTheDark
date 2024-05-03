@@ -1,0 +1,30 @@
+{% extends "layouy.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+<div class="container">
+    <div class="row">
+      <div class="col">
+        Blades in the Dark
+        <div class="container">
+          <form>
+            <input>
+            Crew
+          </form>
+        </div>
+      </div>
+      <div class="col">
+        Class
+      </div>
+      <div class="col">
+        Abilities
+        <div class="slidecontainer">
+          <input type="range" min="0" max="9" value="0" class="slider" id="myRange">
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
