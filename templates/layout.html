@@ -20,10 +20,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Crew</a>
+              <a class="nav-link" href="/">Crew</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Characters
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -33,12 +33,18 @@
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
               </ul>
             </li>
+            {% if session["user_id"] %}
             <li class="nav-item">
-              <a class="nav-link " href="/login" tabindex="-1" aria-disabled="true">Login</a>
+              <a class="nav-link" href="/" tabindex="-1" aria-disabled="true">Logout</a> 
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="/login" tabindex="-1" aria-disabled="true">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="/register" tabindex="-1" aria-disabled="true">Register</a>
+              <a class="nav-link" href="/register" tabindex="-1" aria-disabled="true">Register</a>
             </li>
+            {% endif %}
           </ul>
         </div>
       </div>

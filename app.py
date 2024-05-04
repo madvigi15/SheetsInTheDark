@@ -1,4 +1,5 @@
 from flask import Flask, redirect, render_template, request, session
+from flask_session import Session
 from functools import wraps
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -13,7 +14,10 @@ cur = db.cursor()
 # Defining that the cursor should output dictionaries
 cur.row_factory = sqlite3.Row
 
-app.secret_key = "hello"
+# Configure session to use filesystem (instead of signed cookies)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 
 # Wrapper from https://flask.palletsprojects.com/en/latest/patterns/viewdecorators/
 def login_required(f):
