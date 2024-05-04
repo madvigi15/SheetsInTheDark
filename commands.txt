@@ -1,0 +1,7 @@
+must be in cmd
+
+# to enter venv environment
+env\Scripts\activate
+
+# to run flask while in environment
+flask run
