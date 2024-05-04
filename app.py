@@ -108,3 +108,17 @@ def register():
     # User reached route via GET (as by clicking a link or via redirect)
     else:
         return render_template('register.html')
+
+@app.route("/logout")
+@login_required
+def logout():
+    # Forget any user_id
+    session.clear()
+
+    # Redirect user to login form
+    return render_template("login.html")
+
+@app.route("/character")
+@login_required
+def character():
+    return render_template("character.html")
