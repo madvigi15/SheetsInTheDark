@@ -6,12 +6,21 @@
 
 {% block body %}
     <form action="/login" method="post">
-        <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+        <div class="mb-3 p-b-1 p-t-1">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text" required>
         </div>
-        <div class="mb-3">
-            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+        <div class="mb-3 p-b-1">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password" required>
         </div>
-        <button class="btn btn-primary" type="submit">Log In</button>
+        <div class="d-grid gap-2 col-1 mx-auto">    
+            <button class="btn btn-primary" type="submit">Log In</button>
+        </div>
+    </form>
+    <form action="/register" method="get">
+        <div class="mb-3 p-b-1">
+            <label>To create an account you can </label>
+            <a href="/register">register</a>
+            <label>here.</label>
+        </div>
     </form>
 {% endblock %}

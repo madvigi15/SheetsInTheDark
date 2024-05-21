@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    New_Character
+{% endblock %}
+
+{% block body %}
+<form action="/new_character" method="post">
+    <div class="mb-3">
+        <label for="name">Name:</label>
+        <input id="name" name="name" placeholder="Name" type="text" required>
+
+        <label for="crew">Crew:</label>
+        <input id="crew" name="crew" placeholder="Crew Name" type="text">
+ 
+        <label for="alias" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Tooltip on right">Alias:</label>
+        <input id="alias" name="alias" placeholder="Alias" type="text">
+    </div>
+    <div class="mb-3">
+        <label for="heritage">Heritage:</label>
+        <select id="heritage" class="form-select" required>
+            <option selected value="1" title="The largest and most industrialized land in the Imperium, and is home to the capitol city as well as Duskwall itself. They are known as a diverse conglomeration of cultures that have grown together in close proximity for centuries.">Akoros</option>
+            <option value="2" title="A culture of growing up on ships and travelling a lot before settling down. They are known as corsairs and merchants who live without lightning barriers — dealing with spirits in other ways.">Dagger Isles</option>
+            <option value="3" title="A culture considered “foreign” by the locals of Duskwall, Iruvia is a rich and powerful desert kingdom far to the south.">Iruvia</option>
+            <option value="4" title="Considered “wild” by the rest of the empire. Most Severosi live in nomadic horse-tribes scattered across the deathlands, surviving within the ruins of ancient arcane fortresses which still repel spirits.">Severos</option>
+            <option value="5" title="An island kingdom just across the sea from Doskvol. Skovlan was last to be brought under Imperial rule, over the course of the 36-year Unity War. Many Skovlander refugees who lost their homes and jobs in the destruction of the war have come to Doskvol seeking new opportunities.">Skovlan</option>
+            <option value="6" title="A semi-mythical place, far away beyond the northern Void Sea. Everyone says that the people there are part-demon. If you choose Tycherosi heritage, also create a demonic telltale (like black shark eyes, feathers instead of hair, etc.) that marks your character">Tycheros</option>
+          </select>
+    </div>
+    <div class="mb-3">
+        <label for="background">Background:</label>
+        <select id="background" name="background" class="form-select" required>
+            <option selected value="1" title="A scholar, a professor or student from Doskvol Academy, a philosopher or journalist, etc.">Academic</option>
+            <option value="2" title="A servant, a factory worker, a coach driver, a docker, a sailor, a Rail Jack, etc.">Labor</option>
+            <option value="3" title="An advocate or barrister, a Bluecoat or inspector (or even Spirit Warden), a prison guard from Ironhook, etc.">Law</option>
+            <option value="4" title="A shopkeeper, a merchant, a skilled crafts-person, a shipping agent, etc.">Military</option>
+            <option value="5" title="An Imperial or Skovlander soldier, a mercenary, an intelligence operative, a strategist, a training instructor, etc.">Noble</option>
+            <option value="6" title="A dilettante, a courtier, the scion of a fallen house, etc.">Trade</option>
+            <option value="7" title="A street urchin, gang member, young thug, or other outcast who grew up on the streets.">Underworld</option>
+        </select>
+    </div>
+</form>
+{% endblock %}

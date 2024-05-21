@@ -15,6 +15,15 @@
         <div class="mb-3">
             <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm Password" type="password">
         </div>
-        <button class="btn btn-primary" type="submit">Register</button>
+        <div class="d-grid gap-2 col-1 mx-auto">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+        <form action="/login" method="get">
+            <div class="mb-3 p-b-1">
+                <label>If you already have an account, you can </label>
+                <a href="/login">login</a>
+                <label>here.</label>
+            </div>
+        </form>
     </form>
 {% endblock %}

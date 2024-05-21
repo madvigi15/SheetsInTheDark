@@ -7,7 +7,7 @@ import sqlite3
 
 app = Flask(__name__)
 
-# Connect to database (or create if it doesn't exist) and establish the db connection object
+# Connect to database and establish the db connection object
 db = sqlite3.connect("sheets.db", check_same_thread=False)
 # Connect cursor in db to make calls against
 cur = db.cursor()
@@ -122,3 +122,8 @@ def logout():
 @login_required
 def character():
     return render_template("character.html")
+
+@app.route("/new_character")
+@login_required
+def new_character():
+    return render_template("new_character.html")

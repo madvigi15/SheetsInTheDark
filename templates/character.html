@@ -11,8 +11,7 @@
         Blades in the Dark
         <div class="container">
           <form>
-            <label>Crew</label>
-            <input>
+            <label>Crew: {{ crew_name }}</label>
           </form>
         </div>
       </div>
@@ -26,5 +25,10 @@
         </div>
       </div>
     </div>
+    <form action="/new_character">
+        <div class="d-grid gap-2 col-1 mx-auto">    
+            <button class="btn btn-primary" type="submit">New Charater</button>
+        </div>
+    </form>
   </div>
 {% endblock %}
