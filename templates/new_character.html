@@ -17,9 +17,23 @@
         <input id="alias" name="alias" placeholder="Alias" type="text">
     </div>
     <div class="mb-3">
+        <label for="playbook">Playbook:</label>
+        <select id="playbook" name="playbook" class="form-select" onchange="assignPlaybook(this.value)" required>
+            <option selected value="" disabled>Select Playbook</option>
+            <option value="1" title="Cutters are good at winning fights, with violence and with intimidation. Play a Cutter if you want to get your way.">Cutter</option>
+            <option value="2" title="Hounds are good at tracking things down and also long-distance combat. Play a Hound if you want to choose your battles.">Hound</option>
+            <option value="3" title="Leeches are good at using alchemy and wrecking stuff with sabotage. Play a Leech if you want to be creative with weird tools.">Leech</option>
+            <option value="4" title="Lurks are good at sneaking around and breaking into places. Play a Lurk if you want to slink around in the shadows.">Lurk</option>
+            <option value="5" title="Slides are good at social situations and subterfuge. Play a Slide if you want to manipulate and deceive people.">Slide</option>
+            <option value="6" title="Spiders are good at masterminding maneuvers. Play a Spider if you want to assist teammates and deal with other factions.">Spider</option>
+            <option value="7" title="Whispers are good at magical stuff and dealing with ghosts. Play a Whisper if you want to meddle with arcane powers.">Whisper</option>
+          </select>
+    </div>
+    <div class="mb-3">
         <label for="heritage">Heritage:</label>
-        <select id="heritage" class="form-select" required>
-            <option selected value="1" title="The largest and most industrialized land in the Imperium, and is home to the capitol city as well as Duskwall itself. They are known as a diverse conglomeration of cultures that have grown together in close proximity for centuries.">Akoros</option>
+        <select id="heritage" name="heritage" class="form-select" required>
+            <option selected value="" disabled>Select Heritage</option>
+            <option value="1" title="The largest and most industrialized land in the Imperium, and is home to the capitol city as well as Duskwall itself. They are known as a diverse conglomeration of cultures that have grown together in close proximity for centuries.">Akoros</option>
             <option value="2" title="A culture of growing up on ships and travelling a lot before settling down. They are known as corsairs and merchants who live without lightning barriers — dealing with spirits in other ways.">Dagger Isles</option>
             <option value="3" title="A culture considered “foreign” by the locals of Duskwall, Iruvia is a rich and powerful desert kingdom far to the south.">Iruvia</option>
             <option value="4" title="Considered “wild” by the rest of the empire. Most Severosi live in nomadic horse-tribes scattered across the deathlands, surviving within the ruins of ancient arcane fortresses which still repel spirits.">Severos</option>
@@ -30,7 +44,8 @@
     <div class="mb-3">
         <label for="background">Background:</label>
         <select id="background" name="background" class="form-select" required>
-            <option selected value="1" title="A scholar, a professor or student from Doskvol Academy, a philosopher or journalist, etc.">Academic</option>
+            <option selected value="" disabled>Select Background</option>
+            <option value="1" title="A scholar, a professor or student from Doskvol Academy, a philosopher or journalist, etc.">Academic</option>
             <option value="2" title="A servant, a factory worker, a coach driver, a docker, a sailor, a Rail Jack, etc.">Labor</option>
             <option value="3" title="An advocate or barrister, a Bluecoat or inspector (or even Spirit Warden), a prison guard from Ironhook, etc.">Law</option>
             <option value="4" title="A shopkeeper, a merchant, a skilled crafts-person, a shipping agent, etc.">Military</option>
@@ -39,5 +54,165 @@
             <option value="7" title="A street urchin, gang member, young thug, or other outcast who grew up on the streets.">Underworld</option>
         </select>
     </div>
+    <div class="mb-3">
+        <label for="vice">Vice:</label>
+        <select id="vice" name="vice" class="form-select" required>
+            <option selected value="" disabled>Select Vice</option>
+            <option value="1" title="You are dedicated to an unseen power, forgotten god, ancestor, etc.">Faith</option>
+            <option value="2" title="You crave games of chance, betting on sporting events, etc.">Gambling</option>
+            <option value="3" title="Expensive or ostentatious displays of opulence.">Luxury</option>
+            <option value="4" title="You are devoted to a family, a cause, an organization, a charity, etc.">Obligation</option>
+            <option value="5" title="Gratification from lovers, food, drink, drugs, art, theater, etc.">Pleasure</option>
+            <option value="6" title="You seek oblivion in the abuse of drugs, drinking to excess, getting beaten to a pulp in the fighting pits, etc.">Stupor</option>
+            <option value="7" title="You experiment with strange essences, consort with rogue spirits, observe bizarre rituals or taboos, etc.">Weird</option>
+        </select>
+    </div>
+    <div class="container">
+        <div class="row">
+            <label>Put one dot in any action that you feel reflects your character’s heritage.</label>
+            <div class="form-check col">
+                <input type="radio" id="hunt" name="background_action" value="1">
+                <label for="hunt">Hunt</label>
+                <input type="radio" id="study" name="background_action" value="2">
+                <label for="study">Study</label>
+                <input type="radio" id="survey" name="background_action" value="3">
+                <label for="survey">Survey</label>
+                <input type="radio" id="tinker" name="background_action" value="4">
+                <label for="tinker">Tinker</label>
+            </div>
+            <div class="col">
+                <input type="radio" id="finesse" name="background_action" value="5">
+                <label for="finesse">Finesse</label>
+                <input type="radio" id="study" name="background_action" value="1">
+                <label for="study">Study</label>
+                <input type="radio" id="survey" name="background_action" value="1">
+                <label for="survey">Survey</label>
+                <input type="radio" id="tinker" name="background_action" value="1">
+                <label for="tinker">Tinker</label>
+            </div>
+            <div class="col">
+                <input type="radio" id="hunt" name="background_action" value="1">
+                <label for="hunt">Hunt</label>
+                <input type="radio" id="study" name="background_action" value="1">
+                <label for="study">Study</label>
+                <input type="radio" id="survey" name="background_action" value="1">
+                <label for="survey">Survey</label>
+                <input type="radio" id="tinker" name="background_action" value="1">
+                <label for="tinker">Tinker</label>
+            </div>
+        </div>
+    </div>
+    <div class="d-grid gap-2 col-1 mx-auto">    
+        <button class="btn btn-primary" type="submit">Save Character</button>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                Insight<br>
+                <label for="hunt">Hunt</label>
+                <div class="slidecontainer">
+                    <input id="hunt" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+                <label for="study">Study</label>
+                <div class="slidecontainer">
+                    <input id="study" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+                <label for="survey">Survey</label>
+                <div class="slidecontainer">
+                    <input id="survey" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+                <label for="tinker">Tinker</label>
+                <div class="slidecontainer">
+                    <input id="tinker" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+            </div>
+            <div class="col">
+                Prowess<br>
+                <label for="finesse">Finesse</label>
+                <div class="slidecontainer">
+                    <input id="finesse" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+                <label for="prowl">Prowl</label>
+                <div class="slidecontainer">
+                    <input id="prowl" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+                <label for="skirmish">Skirmish</label>
+                <div class="slidecontainer">
+                    <input id="skirmish" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+                <label for="wreck">Wreck</label>
+                <div class="slidecontainer">
+                    <input id="wreck" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+            </div>
+            <div class="col">
+                Resolve<br>
+                <label for="attune">Attune</label>
+                <div class="slidecontainer">
+                    <input id="attune" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+                <label for="command">Command</label>
+                <div class="slidecontainer">
+                    <input id="command" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+                <label for="consort">Consort</label>
+                <div class="slidecontainer">
+                    <input id="consort" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+                <label for="sway">Sway</label>
+                <div class="slidecontainer">
+                    <input id="sway" type="range" min="0" max="3" value="0" class="slider" disabled>
+                </div>
+            </div>
+        </div>
+    </div>
 </form>
+<script>
+    function assignPlaybook(value) {
+        document.getElementById("hunt").value = 0;
+        document.getElementById("study").value = 0;
+        document.getElementById("survey").value = 0;
+        document.getElementById("tinker").value = 0;
+        document.getElementById("finesse").value = 0;
+        document.getElementById("prowl").value = 0;
+        document.getElementById("skirmish").value = 0;
+        document.getElementById("wreck").value = 0;
+        document.getElementById("attune").value = 0;
+        document.getElementById("command").value = 0;
+        document.getElementById("consort").value = 0;
+        document.getElementById("sway").value = 0;
+
+        if (value == 1) {
+            document.getElementById("skirmish").value = 2;
+            document.getElementById("command").value = 1;
+        }
+        else if (value == 2) {
+            document.getElementById("hunt").value = 2;
+            document.getElementById("survey").value = 1;
+        }
+        else if (value == 3) {
+            document.getElementById("tinker").value = 2;
+            document.getElementById("wreck").value = 1;
+        }
+        else if (value == 4) {
+            document.getElementById("prowl").value = 2;
+            document.getElementById("finesse").value = 1;
+        }
+        else if (value == 5) {
+            document.getElementById("sway").value = 2;
+            document.getElementById("consort").value = 1;
+        }
+        else if (value == 6) {
+            document.getElementById("consort").value = 2;
+            document.getElementById("study").value = 1;
+        }
+        else {
+            document.getElementById("attune").value = 2;
+            document.getElementById("study").value = 1;
+        }
+    };
+    function assignAction(value) {
+
+    };
+</script>
 {% endblock %}
